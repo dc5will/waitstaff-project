@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Waitstaff Calculator</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <!-- Title -->
+    <h1 id='WaitstaffTitle'>Waitstaff Calculator</h1>
+
+    <!-- Meal details form -->
+    <form name='tipsForm'>
+    <div class="meal-details">
+        <h2 class='sectionTitle' id='mealTitle'>Enter the Meal Details</h2>
+        <hr>
+        <form class='meal-entry-form'>
+            <label for='meal-price-entry'>Base Meal Price: $</label><br>
+            <input type='number' id='meal-price-entry' name='meal-base-price' placeholder='$0.00'>
+            <label for='meal-tax-rate'>Tax Rate: %</label><br>
+            <input type='number' id='meal-tax-rate' name='meal-tax-rate' placeholder='%'>
+            <label for='meal-tip-percentage'>Tip Percentage: %</label><br>
+            <input type='number' id='meal-tip-percentage' name='meal-tip-percentage' placeholder='%'><br>
+            <input type='submit' value='submit' for='submit' class='meal-entry-button js-meal-entry-submit'>
+            <input type='button' value='cancel' for='cancel' class='meal-entry-button js-meal-entry-cancel'><br>
+        </form>
+    </div>
+
+    <!-- Customer Charges Display-->
+    <div>
+        <h2 class='sectionTitle' id='customerChargesTitle'>Customer Charges</h2><hr>
+            <p class='customer-charges-subtotal'>Subtotal: $0.00</p>
+            <p class='customer-charges-tip'>Tip: $0.00</p>
+            <p class='customer-total'>Total: $0.00</p>
+    </div>
+
+    <!-- My Earnings Info -->
+    <div>
+        <h2 class='sectionTitle' id='earningsTItle'>My Earnings Info</h2><hr>
+            <p class='earnings-info-title'>Tip Total: 0.00</p>
+            <p class='earnings-meal-count'>Meal Count: 0</p>
+            <p class='earnings-average-tip'>Average Tip Per Meal: 0.00</p>
+    </div>
+
+    <!-- Reset button -->
+    <div>
+        <input type='button' value='Reset' for='resetCalculator' class='reset-button js-reset-button'>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
