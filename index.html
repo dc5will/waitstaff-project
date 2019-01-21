@@ -12,7 +12,8 @@
     <!-- Title -->
     <h1 id='waitstaffTitle'>Waitstaff Calculator</h1>
 
-<main>
+<div class='container'>
+    <main id='js-mainCalcPage'>
     <!-- Meal details form -->
     <div class='meal-details left-side'>
         <form name='tipsForm'>
@@ -33,19 +34,20 @@
     <!-- Customer Charges Display-->
     <div class='customer-charge-section right-side'>
         <h2 class='sectionTitle' id='customerChargesTitle'>Customer Charges</h2><hr>
-            <p class='customer-charges-subtotal'>Subtotal: $0.00</p>
-            <p class='customer-charges-tip'>Tip: $0.00</p>
-            <p class='customer-total'>Total: $0.00</p>
+            <p class='customer-charges-subtotal js-customer-charges-subtotal'>Subtotal: $0.00</p>
+            <p class='customer-charges-tip js-customer-charges-tip'>Tip: $0.00</p>
+            <p class='customer-total js-customer-charges-total'>Total: $0.00</p>
     </div>
 
     <!-- My Earnings Info -->
     <div class='earning-info-section right-side'>
         <h2 class='sectionTitle' id='earningsTItle'>My Earnings Info</h2><hr>
-            <p class='earnings-info-title'>Tip Total: 0.00</p>
-            <p class='earnings-meal-count'>Meal Count: 0</p>
-            <p class='earnings-average-tip'>Average Tip Per Meal: 0.00</p>
+            <p class='earnings-info-title js-earnings-info-title'>Tip Total: 0.00</p>
+            <p class='earnings-meal-count js-earnings-meal-count'>Meal Count: 0</p>
+            <p class='earnings-average-tip js-earnings-average-tip'>Average Tip Per Meal: 0.00</p>
     </div>
-</main>
+    </main>
+</div>
 
     <!-- Reset button -->
     <div class='reset-button'>
