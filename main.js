@@ -5,9 +5,9 @@
 
 // store data in obj
 const STORE = {
-  basePriceInput: 0,
-  taxRateInput: 0,
-  tipPercentInput: 0,
+  basePriceInput: baseMealPriceValue(),
+  taxRateInput: taxRatePercentageValue(),
+  tipPercentInput: tipPercentageValue(),
   subTotal: 0,
   tip: 0,
   total: 0,
@@ -33,15 +33,15 @@ function generateHTMLstring() {
     <h2 class='sectionTitle' id='mealTitle'>Enter the Meal Details</h2>
     <hr>
     <form class='meal-entry-form'>
-        <label for='meal-price-entry'>Base Meal Price: $</label>
-        <input type='number' id='meal-price-entry' name='meal-base-price' placeholder='$0.00'><br>
-        <label for='meal-tax-rate'>Tax Rate: %</label>
-        <input type='number' id='meal-tax-rate' name='meal-tax-rate' placeholder='%'><br>
-        <label for='meal-tip-percentage'>Tip Percentage: %</label>
-        <input type='number' id='meal-tip-percentage' name='meal-tip-percentage' placeholder='%'><br>
-        <input type='submit' value='submit' for='submit' class='meal-entry-button js-meal-entry-submit'>
-        <input type='button' value='cancel' for='cancel' class='meal-entry-button js-meal-entry-cancel'><br>
-    </form>
+            <label for='meal-price-entry'>Base Meal Price: $</label>
+            <input type='number' id='js-meal-price-entry' name='meal-base-price' placeholder='$0.00'><br>
+            <label for='meal-tax-rate'>Tax Rate: %</label>
+            <input type='number' id='js-meal-tax-rate' name='meal-tax-rate' placeholder='%'><br>
+            <label for='meal-tip-percentage'>Tip Percentage: %</label>
+            <input type='number' id='js-meal-tip-percentage' name='meal-tip-percentage' placeholder='%'><br>
+            <input type='submit' value='submit' for='submit' class='meal-entry-button js-meal-entry-button js-meal-entry-submit'>
+            <input type='button' value='cancel' for='cancel' class='meal-entry-button js-meal-entry-button js-meal-entry-cancel'><br>
+        </form>
 </div>
 
 <!-- Customer Charges Display-->
@@ -61,31 +61,43 @@ function generateHTMLstring() {
 </div>`;
 }
 
-// render calculator page
+// render calculator page function
 function renderCalculatorPage() {
   console.log('renderCalc works');
   $('#js-mainCalcPage').html(generateHTMLstring);
 }
 
 
-// handle meal details
-function handleMealDetails() {
-
+// handle new meal submit
+function handleNewMeal() {
+  console.log('handle new meal ran');
+  $('#js-mainCalcPage').on('click', 'js-meal-entry-submit', function(event) {
+    baseMealPriceValue();
+    taxRatePercentageValue();
+    tipPercentageValue();
+    renderCalculatorPage();
+  });
 }
 
 // take value of base meal price
 function baseMealPriceValue() {
-
+  const mealPriceValue = parseInt($(this).closest('form').find('#js-meal-price-entry').val());
+  console.log(mealPriceValue);
+  return mealPriceValue;
 }
 
 // take value of tax rate
 function taxRatePercentageValue() {
-
+  const taxRateValue = $('#js-meal-tax-rate').val();
+  console.log(taxRateValue);
+  return taxRateValue;
 }
 
 // take value of tip percentage
 function tipPercentageValue() {
-
+  const tipValue = $('#js-meal-tip-percentage').val();
+  console.log(tipValue);
+  return tipValue;
 }
 
 // calculate sub total formula
@@ -125,6 +137,7 @@ function resetForm() {
 function handleCalculator() {
   renderCalculatorPage();
   generateHTMLstring();
+  handleNewMeal();
 }
 
 
