@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Waitstaff Calculator</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
     <!-- Title -->
-    <h1 id='WaitstaffTitle'>Waitstaff Calculator</h1>
+    <h1 id='waitstaffTitle'>Waitstaff Calculator</h1>
 
+<main>
     <!-- Meal details form -->
-    <form name='tipsForm'>
-    <div class="meal-details">
+    <div class='meal-details left-side'>
+        <form name='tipsForm'>
         <h2 class='sectionTitle' id='mealTitle'>Enter the Meal Details</h2>
         <hr>
         <form class='meal-entry-form'>
@@ -30,7 +31,7 @@
     </div>
 
     <!-- Customer Charges Display-->
-    <div>
+    <div class='customer-charge-section right-side'>
         <h2 class='sectionTitle' id='customerChargesTitle'>Customer Charges</h2><hr>
             <p class='customer-charges-subtotal'>Subtotal: $0.00</p>
             <p class='customer-charges-tip'>Tip: $0.00</p>
@@ -38,20 +39,22 @@
     </div>
 
     <!-- My Earnings Info -->
-    <div>
+    <div class='earning-info-section right-side'>
         <h2 class='sectionTitle' id='earningsTItle'>My Earnings Info</h2><hr>
             <p class='earnings-info-title'>Tip Total: 0.00</p>
             <p class='earnings-meal-count'>Meal Count: 0</p>
             <p class='earnings-average-tip'>Average Tip Per Meal: 0.00</p>
     </div>
+</main>
 
     <!-- Reset button -->
-    <div>
+    <div class='reset-button'>
         <input type='button' value='Reset' for='resetCalculator' class='reset-button js-reset-button'>
     </div>
 
     <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="main.js"></script>
 </body>
+
 
 </html>
